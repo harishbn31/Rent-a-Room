@@ -10,18 +10,8 @@
 	<ul>
 		<li><%= link_to room.name, room %></li>	
 	</ul>
-	<% elsif (current_user.role?"admin") && (room.is_authorized == false)%>
-		<ul>
-		<li><%= link_to room.name, room%>||
-		<% if current_user.role?"admin"%>
-				<%= form_for room do |f| %>
-				<%= f.hidden_field :is_authorized, value:true%>
-				<%= f.submit "Authorize"%>
-				<%end%></li>
-		 <%end%>
-		</ul>
-	 <%end%>
-    <%end%>
+	<%end%>
+	<%end%>
 <%end%>
 <p><%= link_to "Add room", new_room_path %></p>
 
