@@ -24,6 +24,7 @@
 	<%if current_user.role?"admin" %>
 	|<%= link_to "Non authorized rooms", rooms_authorization_rooms_path %>
 	<%end%>
+	
 
 
 	<% if (can? :update, Booking.new) && (current_user.role?"host") %>

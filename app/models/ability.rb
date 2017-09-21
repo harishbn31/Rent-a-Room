@@ -9,9 +9,11 @@ class Ability
         can :manage, :all
         can :read, :authorization_rooms
     elsif user.role?"guest"
-        can :read, [City,Room,Booking]
-        can [:create], [Room,Booking]
+        can :read, [City,Room,Booking,Review]
+        can [:create], [Room,Booking,Review]
     elsif user.role?"host"
+        can :manage, SpecialPrice
+        can :read, Review
         can [:read,:my_rooms], Room
         can [:create],[Room,Booking]
         can [:update,:unconfirmed], Booking

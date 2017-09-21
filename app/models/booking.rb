@@ -2,6 +2,7 @@ class Booking < ActiveRecord::Base
 	validates_presence_of :start_date,:end_date,:user_id,:room_id
 	belongs_to :user
 	belongs_to :room
+	has_many :special_prices
 	validate :check_published_date
 	validate :check_date, on: :create
 

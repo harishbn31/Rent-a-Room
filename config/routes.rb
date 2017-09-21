@@ -1,18 +1,20 @@
 Rails.application.routes.draw do
 
+  resources :rooms do
+    resources :special_prices
+  end
     get 'rooms/my_rooms'
     get 'bookings/unconfirmed'
     get 'bookings/list'
     get 'rooms/authorization_rooms'
 
-    get 'rooms/index'
-
-  get 'site/index'
-
   get 'cities/index'
   devise_for :users
   root 'site#index'
 
+  
+  # resources :special_prices
+  resources :reviews
   resources :cities
   resources :amenities
   resources :rooms
