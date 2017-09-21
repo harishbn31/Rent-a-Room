@@ -1,4 +1,4 @@
-<p><%if current_user.role?"host" %>
+<p><%if can? :create, SpecialPrice.new %>
 	<%= link_to "Add Special price",new_room_special_price_path(@room.id)%>
 	<%end%></p>
 <table border = '2'>
